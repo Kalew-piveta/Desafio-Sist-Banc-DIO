@@ -11,12 +11,12 @@ Selecione uma opção:
 
 --> """
 def saque():
-    global saldo,extrato,limite,LIMITE_SAQUE
+    global saldo,extrato,limite,LIMITE_SAQUE,count
 
     valor_saque = float(input("Digite o valor que deseja efetuar o saque: "))
-    count = 0
     
-    if valor_saque < 0:
+    
+    if valor_saque > 0:
         if count < LIMITE_SAQUE:
             if valor_saque <= limite:
                 if valor_saque <= saldo:
@@ -55,7 +55,7 @@ saldo = 0.0
 limite = 500
 extrato = "#### EXTRATO DA CONTA ####\n\n"
 LIMITE_SAQUE = 3
-
+count = 0
 while True:
     opcao = input(menu)
     
